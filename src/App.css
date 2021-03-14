@@ -1,0 +1,21 @@
+.full-screen{
+  background-color: #4c4c4c;
+}
+.app-wrapper{
+  margin: 0 auto;
+  width: 1200px;
+  display: grid;
+  grid-template-areas: "h h" "n c";
+  grid-auto-rows: 60px 1fr;
+  grid-template-columns: 2fr 10fr;
+  /*grid-gap: 5px;*/
+}
+.app-wrapper-content{
+  background-color: #f2f1f6;
+  grid-area: c;
+  border-radius: 5px;
+  padding: 10px 10px 0 10px;
+}
+.app-wrapper-content img{
+  height: 320px;
+}

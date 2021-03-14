@@ -1,0 +1,10 @@
+a{
+    color: #535353;
+    text-decoration: none;
+    margin-top: 100px;
+
+}
+
+a.active{
+    font-weight: bold;
+}

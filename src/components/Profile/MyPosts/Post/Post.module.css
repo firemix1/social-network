@@ -1,0 +1,28 @@
+.item{
+    border: 1px solid #969696;
+    padding: 1px;
+    border-radius: 3px;
+    background: #eaeaea;
+}
+.item .post{
+    margin-top: 3px;
+    margin-right: 5px;
+    display: inline-flex;
+}
+
+.item .post img{
+    border-radius: 100%;
+    height: 50px;
+    margin-right: 10px;
+}
+.item button{
+    margin-right: auto;
+}
+.count{
+    width: 44px;
+    display: inline-flex;
+    margin-right: 10px;
+}
+.likes .btn{
+    padding: 0 7px 0 7px;
+}

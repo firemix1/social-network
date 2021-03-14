@@ -1,0 +1,28 @@
+.nav {
+    background-color: #01caff;
+    grid-area: n;
+    margin-right: 5px;
+    height: 500px;
+    border-radius: 5px;
+
+}
+
+.nav .refs {
+    margin: 10px 10px 0 10px;
+
+}
+
+.nav .refs a{
+    color: #e0e0e0;
+    text-decoration: none;
+    margin-top: 100px;
+
+}
+.refs a.active{
+    color: white;
+    font-weight: bold;
+}
+
+.nav .refs div{
+    margin-bottom: 7px;
+}
