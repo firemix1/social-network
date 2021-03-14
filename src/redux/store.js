@@ -1,3 +1,7 @@
+//
+//  this state is no longer used
+//
+
 import profileReducer from "./profile-reducer";
 import dialogsReducer from "./dialogs-reducer";
 
@@ -48,6 +52,6 @@ let store = {
     }
 }
 
-window.store = store
+// window.store = store
 
 export default store
