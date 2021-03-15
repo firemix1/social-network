@@ -4,7 +4,7 @@ const ProfileInfo =() =>{
     return (
         <div>
             <div>
-                <img src="https://i.pinimg.com/originals/13/51/09/1351098f1adf187d55fa71520d8fe200.jpg"/>
+                <img src="https://i.pinimg.com/originals/13/51/09/1351098f1adf187d55fa71520d8fe200.jpg" alt="avatar"/>
             </div>
             <div>
                 ava description

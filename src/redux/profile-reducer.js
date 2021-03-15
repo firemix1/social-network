@@ -25,6 +25,7 @@ let profileReducer = (state = initialState, action) => {
         case UPDATE_POST_TEXT:
             state.newPostText = action.text
             break;
+        default: return state
     }
     return state;
 }
