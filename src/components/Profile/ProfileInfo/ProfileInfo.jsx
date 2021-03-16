@@ -1,5 +1,4 @@
 
-
 const ProfileInfo =() =>{
     return (
         <div>

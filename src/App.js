@@ -5,8 +5,9 @@ import Navbar from "./components/Navbar/Navbar";
 import Profile from "./components/Profile/Profile";
 import {Route} from "react-router-dom";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
+import UsersContainer from "./components/Users/UsersContainer";
 
-function App(props) {
+function App() {
     return (
         <div className="full-screen">
             <div className="app-wrapper">
@@ -15,6 +16,7 @@ function App(props) {
                 <div className="app-wrapper-content">
                     <Route path="/profile" render={() => <Profile />}/>
                     <Route path="/dialogs" render={() => <DialogsContainer />}/>
+                    <Route path="/users" render={() => <UsersContainer />}/>
                 </div>
             </div>
         </div>

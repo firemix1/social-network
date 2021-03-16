@@ -5,8 +5,8 @@ import React from "react";
 
 const Dialogs = (props) => {
 
-    let dialogsElements = props.dialogsPage.dialogs.map(d => <DialogItem id={d.id} dialogName={d.name}/>)
-    let messageElements = props.dialogsPage.messages.map(m => <Message id={m.id} message={m.message}/>)
+    let dialogsElements = props.dialogsPage.dialogs.map(d => <DialogItem id={d.id} dialogName={d.name} key={d.id}/>)
+    let messageElements = props.dialogsPage.messages.map(m => <Message id={m.id} message={m.message} key={m.id}/>)
 
     let sendMessage = () => props.sendMessage()
     let onMessageChange = (e) => {
