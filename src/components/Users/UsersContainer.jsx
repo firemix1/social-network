@@ -4,34 +4,32 @@ import {
     follow,
     setCurrentPage,
     setTotalUsersCount,
-    setUsers,
+    setUsers, toggleFollowingProcessing,
     toggleIsFetching,
     unfollow
 } from "../../redux/users-reducer";
-import axios from "axios";
 import React from "react"
 import Preloader from "../Preloader/Preloader";
+import {usersApi} from "../../api/api";
 
 class UsersContainer extends React.Component {
 
     componentDidMount() {
         this.props.toggleIsFetching(true)
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
-            .then(response => {
+        usersApi.getUsers(this.props.currentPage, this.props.pageSize).then(data => {
                     this.props.toggleIsFetching(false)
-                    this.props.setUsers(response.data.items);
-                    this.props.setTotalUsersCount(response.data.totalCount)
+                    this.props.setUsers(data.items);
+                    this.props.setTotalUsersCount(data.totalCount)
                 }
             )
     }
 
-    onSelectedPage = (p) => {
-        this.props.setCurrentPage(p)
+    onSelectedPage = (page) => {
+        this.props.setCurrentPage(page)
         this.props.toggleIsFetching(true)
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${p}&count=${this.props.pageSize}`)
-            .then(response => {
+        usersApi.getUsers(page, this.props.pageSize).then(data => {
                     this.props.toggleIsFetching(false)
-                    this.props.setUsers(response.data.items)
+                    this.props.setUsers(data.items)
                 }
             )
     }
@@ -49,13 +47,15 @@ class UsersContainer extends React.Component {
                            follow={this.props.follow}
                            unfollow={this.props.unfollow}
                            isFetching={this.props.isFetching}
+                           followingInProgress={this.props.followingInProgress}
+                           toggleFollowingProcessing={this.props.toggleFollowingProcessing}
+
                     />
                 </div>
             </>
         )
     }
 }
-
 
 const mapStateToProps = (state) => {
     return {
@@ -64,7 +64,7 @@ const mapStateToProps = (state) => {
         totalUsersCount: state.usersPage.totalUsersCount,
         currentPage: state.usersPage.currentPage,
         isFetching: state.usersPage.isFetching,
-
+        followingInProgress: state.usersPage.followingInProgress
     }
 }
 
@@ -74,4 +74,5 @@ export default connect(mapStateToProps, {
     setUsers,
     setCurrentPage,
     setTotalUsersCount,
-    toggleIsFetching})(UsersContainer)
+    toggleIsFetching,
+    toggleFollowingProcessing})(UsersContainer)
