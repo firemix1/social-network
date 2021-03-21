@@ -18,9 +18,22 @@ export const usersApi = {
         return instance.delete("follow/" + userId)
     },
     getProfileInfo(userId) {
-        return instance.get("profile/" + userId)
+        return profileApi.getProfileInfo(userId)
     }
 }
+
+export const profileApi ={
+    getProfileInfo(userId) {
+        return instance.get("profile/" + userId)
+    },
+    setStatus(status) {
+        return instance.put("profile/status", {status: status})
+    },
+    getStatus(userId) {
+        return instance.get("profile/status/" + userId)
+    }
+}
+
 export const authApi = {
     setAuthMe(){
         return instance.get("auth/me/")
