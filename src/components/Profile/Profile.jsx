@@ -10,6 +10,7 @@ const Profile = (props) => {
                          status={props.status}
                          setStatusMe={props.setStatusMe}
                          getStatus={props.getStatus}
+
             />
             <MyPostsContainer />
         </div>

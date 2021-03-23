@@ -1,6 +1,5 @@
-import Preloader from "../../Preloader/Preloader";
+import Preloader from "../../Common/Preloader/Preloader";
 import ProfileStatus from "./ProfileStatus";
-import Profile from "../Profile";
 import React from "react";
 
 const ProfileInfo =(props) =>{
@@ -14,7 +13,7 @@ const ProfileInfo =(props) =>{
                 ava description
             </div>
             <div>
-                <img src={props.profile.photos.large}/>
+                <img src={props.profile.photos.large} alt={"large"}/>
             </div>
             <div>
                 <ProfileStatus status={props.status}

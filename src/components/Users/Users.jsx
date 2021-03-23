@@ -24,7 +24,7 @@ let Users = (props) => {
                     <span className={styles.photoUser}>
                         <NavLink to={"/profile/" + u.id}>
                             <img src={u.photos.small != null ? u.photos.small
-                                : userPhoto}/>
+                                : userPhoto} alt={"small"}/>
                         </NavLink>
                     </span>
                     <span>{u.name}</span>
@@ -45,6 +45,5 @@ let Users = (props) => {
         </div>
     )
 }
-
 
 export default Users

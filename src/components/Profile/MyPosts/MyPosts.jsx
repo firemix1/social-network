@@ -1,33 +1,41 @@
 import Post from "./Post/Post";
 import styles from "./MyPost.module.css"
 import React from "react";
+import {Form} from "react-final-form";
+import {MyPostWithValidate} from "../../Common/FormsControl/FormsControl";
 
 const MyPosts = (props) => {
 
     let postElements = props.posts.map(p => <Post id={p.id} message={p.message} likesCount={p.likesCount} key={p.id}/>)
-    let newPostElement = React.createRef()
 
-    let addPost = () => {
-        props.addPost()
-    }
-    let onPostChange = () => {
-
-        let text = newPostElement.current.value
-        props.onPostChange(text)
+    const onSubmit = text => {
+        props.addPost(text.post)
     }
 
     return (
         <div className={styles.items}>
             <h3>My posts</h3>
             <div>
-                <textarea ref={newPostElement} onChange={onPostChange} value={props.newPostText}
-                          placeholder="What's new?"/>
-                <div>
-                    <button onClick={addPost}>Send</button>
-                </div>
+                <NewPostForm onSubmit={onSubmit}/>
             </div>
             {postElements}
         </div>
     )
 }
+const NewPostForm = (props) => (
+    <Form
+        onSubmit={props.onSubmit}
+        render={({handleSubmit}) => (
+            <form onSubmit={handleSubmit}>
+                <div>
+                    <MyPostWithValidate />
+                </div>
+                <div>
+                    <button type="submit">Post</button>
+                </div>
+            </form>
+        )}
+    />
+)
+
 export default MyPosts
