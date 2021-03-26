@@ -1,0 +1,21 @@
+.selected{
+    font-weight: bold;
+    color: #429a95;
+}
+.pages{
+    cursor: pointer;
+    margin: 0 2px;
+    width: 40px;
+}
+.pageNumber{
+
+}
+.paginator{
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    border-bottom: 2px solid #429a95;
+    border-radius: 5%;
+    width: 45%;
+}

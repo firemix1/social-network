@@ -1,19 +1,21 @@
 .nav {
-    background-color: #01caff;
+    display: flex;
+    background-color: #429a95;
     grid-area: n;
     margin-right: 5px;
-    height: 500px;
+    height: 350px;
     border-radius: 5px;
 
 }
-
 .nav .refs {
+    display: inline-block;
+    width: 100%;
     margin: 10px 10px 0 10px;
 
 }
 
-.nav .refs a{
-    color: #e0e0e0;
+.refs a{
+    color: #eee0d2;
     text-decoration: none;
     margin-top: 100px;
 

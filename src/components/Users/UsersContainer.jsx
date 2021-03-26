@@ -1,19 +1,25 @@
 import {connect} from "react-redux";
 import Users from "./Users";
-import {followUser, getUsers, toggleFollowingProcessing, unfollowUser} from "../../redux/users-reducer";
+import {followUser, requestUsers, toggleFollowingProcessing, unfollowUser} from "../../redux/users-reducer";
 import React from "react"
 import Preloader from "../Common/Preloader/Preloader";
 import {compose} from "redux";
+import {
+    getCurrentPage,
+    getFollowingInProgress,
+    getIsFetching,
+    getPageSize,
+    getTotalUsersCount,
+    getUsers
+} from "../../redux/users-selectors";
 
 class UsersContainer extends React.Component {
 
     componentDidMount() {
-        this.props.getUsers(this.props.currentPage, this.props.pageSize)
+        this.props.requestUsers(this.props.currentPage, this.props.pageSize)
     }
-
-
     onSelectedPage = (page) => {
-        this.props.getUsers(page, this.props.pageSize)
+        this.props.requestUsers(page, this.props.pageSize)
     }
 
     render() {
@@ -30,7 +36,7 @@ class UsersContainer extends React.Component {
                            toggleFollowingProcessing={this.props.toggleFollowingProcessing}
                            unfollowUser={this.props.unfollowUser}
                            followUser={this.props.followUser}
-
+                           authorizedId={this.props.authorizedId}
                     />
                 </div>
             </>
@@ -39,19 +45,21 @@ class UsersContainer extends React.Component {
 }
 
 const mapStateToProps = (state) => {
+    debugger
     return {
-        users: state.usersPage.users,
-        pageSize: state.usersPage.pageSize,
-        totalUsersCount: state.usersPage.totalUsersCount,
-        currentPage: state.usersPage.currentPage,
-        isFetching: state.usersPage.isFetching,
-        followingInProgress: state.usersPage.followingInProgress
+        users: getUsers(state),
+        pageSize: getPageSize(state),
+        totalUsersCount: getTotalUsersCount(state),
+        currentPage: getCurrentPage(state),
+        isFetching: getIsFetching(state),
+        followingInProgress: getFollowingInProgress(state),
+        authorizedId: state.auth.id
     }
 }
 export default compose(
     connect(mapStateToProps, {
         toggleFollowingProcessing,
-        getUsers,
+        requestUsers,
         unfollowUser,
         followUser
     })

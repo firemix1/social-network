@@ -1,6 +1,6 @@
 .header{
     grid-area: h;
-    background-color: #f2f1f6;
+    background-color: #429a95;
     margin-top: 5px;
     margin-bottom: 5px;
     border-radius: 5px;
@@ -11,5 +11,16 @@
 }
 .LoginBar{
     float: right;
-    margin: 5px 5px;
+}
+.LoginBar a{
+    color: #eee0d2;
+}
+.LoginBar a:hover{
+    color: white;
+}
+.LoginBar .login{
+    margin: 12px 15px;
+}
+.LoginBar .logout{
+    margin: 2px 15px;
 }

@@ -28,6 +28,7 @@ const usersReducer = (state = initialState, action) => {
                     return u
                 })
             }
+
         case UNFOLLOW:
             return {
                 ...state,
@@ -67,11 +68,11 @@ export const toggleIsFetching = (toggle) => ({type: TOGGLE_IS_FETCHING, isFetchi
 export const toggleFollowingProcessing = (isFollowingInProgress, userId) =>
     ({type: TOGGLE_IS_FOLLOWING_PROCESSING, isFollowingInProgress, userId})
 
-export const getUsers = (currentPage, pageSize) => {
+export const requestUsers = (requestPage, pageSize) => {
     return (dispatch) => {
         dispatch(toggleIsFetching(true))
-        dispatch(setCurrentPage(currentPage))
-        usersApi.getUsers(currentPage, pageSize).then(data => {
+        dispatch(setCurrentPage(requestPage))
+        usersApi.getUsers(requestPage, pageSize).then(data => {
                 dispatch(toggleIsFetching(false))
                 dispatch(setUsers(data.items))
                 dispatch(setTotalUsersCount(data.totalCount))
@@ -93,7 +94,7 @@ export const unfollowUser = (userId) => {
 }
 
 export const followUser = (userId) => {
-    return(dispatch) => {
+    return (dispatch) => {
         usersApi.follow(userId)
             .then(response => {
                     if (response.data.resultCode === 0)

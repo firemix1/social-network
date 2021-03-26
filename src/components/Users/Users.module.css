@@ -2,14 +2,25 @@
     width: 50px;
     height: 50px;
     border-radius: 100%;
+    display: flex;
 }
 .selected{
     font-weight: bold;
 }
 .pages{
     cursor: pointer;
-
 }
-/*.pages:hover{*/
-/*    text-decoration: underline;*/
-/*}*/
+.user{
+    margin: 0 0 20px;
+    display: flex;
+}
+.info{
+    display: block;
+    margin-left: 20px;
+}
+.button{
+    display: block;
+}
+.name{
+    display: block;
+}
