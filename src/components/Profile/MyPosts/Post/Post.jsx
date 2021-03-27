@@ -1,4 +1,5 @@
 import styles from './Post.module.css'
+import btnStyle from "../../../Common/modulesCSS/button.module.css";
 
 const Post = (props) => {
     return (
@@ -11,7 +12,7 @@ const Post = (props) => {
                 <div className={styles.count}>
                     {props.likesCount}
                 </div>
-                <button className={styles.btn}>Like it</button>
+                <button className={styles.btn + " " + btnStyle.button} >Like it</button>
             </div>
         </div>
     )

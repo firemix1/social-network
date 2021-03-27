@@ -19,7 +19,10 @@
     text-decoration: none;
     margin-top: 100px;
 
-}
+}.refs a:hover{
+     color: #ffffff;
+
+ }
 .refs a.active{
     color: white;
     font-weight: bold;

@@ -1,0 +1,53 @@
+.button {
+    display: inline-block !important;
+    text-decoration: none !important;
+    background-color: #eee0d2 !important;
+    color: #32736f !important;
+    border: 1px solid #32736f !important;
+    border-radius: 5px !important;
+    font-size: 14px !important;
+    padding: 2px 7px !important;
+    transition: all 0.2s ease !important;
+    cursor: pointer;
+}
+.button:hover{
+    text-decoration: none !important;
+    background-color: #54c4be !important;
+    color: #ffffff !important;
+    border-color: #32736f !important;
+}
+.button:disabled{
+    display: inline-block !important;
+    text-decoration: none !important;
+    background-color: #84c1bb !important;
+    color: #dedede !important;
+    border: 1px solid #32736f !important;
+    border-radius: 5px !important;
+    font-size: 14px !important;
+    padding: 2px 7px !important;
+    transition: all 0.2s ease !important;
+    /*cursor: pointer;*/
+    cursor: wait;
+}
+
+/*       32736f        429a95    */
+/*       eee0d2                  */
+
+.buttonLogin {
+    display: inline-block !important;
+    text-decoration: none !important;
+    background-color: #429a95 !important;
+    color: #eee0d2 !important;
+    border: 1px solid #32736f !important;
+    border-radius: 5px !important;
+    font-size: 14px !important;
+    padding: 2px 7px !important;
+    transition: all 0.2s ease !important;
+    cursor: pointer;
+}
+.buttonLogin:hover{
+    text-decoration: none !important;
+    background-color: #54c4be !important;
+    color: #ffffff !important;
+    border-color: #32736f !important;
+}

@@ -3,6 +3,7 @@ import styles from "./MyPost.module.css"
 import React from "react";
 import {Form} from "react-final-form";
 import {MyPostWithValidate} from "../../Common/FormsControl/FormsControl";
+import btnStyle from "../../Common/modulesCSS/button.module.css";
 
 const MyPosts = (props) => {
 
@@ -31,7 +32,7 @@ const NewPostForm = (props) => (
                     <MyPostWithValidate />
                 </div>
                 <div>
-                    <button type="submit">Post</button>
+                    <button type="submit" className={btnStyle.button} >Post</button>
                 </div>
             </form>
         )}

@@ -30,7 +30,7 @@ let profileReducer = (state = initialState, action) => {
         case SET_STATUS:
             return {...state, status: action.status}
         case SET_PHOTO:
-            return {...state, profile: { ...state.profile, photos: action.photos}}
+            return {...state, profile: {...state.profile, photos: action.photos}}
 
         default:
             return state
@@ -41,37 +41,28 @@ export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile})
 export const setStatus = (status) => ({type: SET_STATUS, status})
 export const setPhotoSuccess = (photos) => ({type: SET_PHOTO, photos})
 
-export const setProfileInfo = (userId) => {
-    return (dispatch) => {
-        usersApi.getProfileInfo(userId)
-            .then(response => {
-                dispatch(setUserProfile(response.data))
-            })
-    }
+export const setProfileInfo = (userId) => async (dispatch) => {
+    let response = await usersApi.getProfileInfo(userId)
+    dispatch(setUserProfile(response.data))
 }
-export const setPhoto = (photo) =>  async (dispatch) => {
-        let response = await profileApi.updatePhoto(photo)
-            if(response.data.resultCode === 0) {
-                dispatch(setPhotoSuccess(response.data.data.photos))
-            }
-    }
 
-export const setStatusMe = (status) => {
-    return (dispatch) => {
-        profileApi.setStatus(status)
-            .then(response => {
-                if (response.data.resultCode === 0)
-                    dispatch(setStatus(status))
-            })
+export const setPhoto = (photo) => async (dispatch) => {
+    let response = await profileApi.updatePhoto(photo)
+    if (response.data.resultCode === 0) {
+        dispatch(setPhotoSuccess(response.data.data.photos))
     }
 }
-export const getStatus = (userId) => {
-    return (dispatch) => {
-        profileApi.getStatus(userId)
-            .then(response => {
-                dispatch(setStatus(response.data))
-            })
-    }
+
+export const setStatusMe = (status) => async (dispatch) => {
+    let response = await profileApi.setStatus(status)
+    if (response.data.resultCode === 0)
+        dispatch(setStatus(status))
 }
+
+export const getStatus = (userId) => async (dispatch) => {
+    let response = await profileApi.getStatus(userId)
+    dispatch(setStatus(response.data))
+}
+
 
 export default profileReducer

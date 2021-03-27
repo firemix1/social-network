@@ -2,6 +2,7 @@ import React from 'react'
 import styles from "./Users.module.css"
 import userPhoto from "../../images/emptyPhotoUser.png"
 import {NavLink} from "react-router-dom";
+import btnStyle from "../Common/modulesCSS/button.module.css";
 
 let User = (props) => {
     return (
@@ -20,11 +21,11 @@ let User = (props) => {
                                 ? <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
                                     props.toggleFollowingProcessing(true, u.id)
                                     props.unfollowUser(u.id)
-                                }}>Unfollow</button>
+                                }} className={btnStyle.button}>Unfollow</button>
                                 : <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
                                     props.toggleFollowingProcessing(true, u.id)
                                     props.followUser(u.id)
-                                }}>Follow</button>}
+                                }} className={btnStyle.button}>Follow</button>}
                         </div>}
                     </div>
 

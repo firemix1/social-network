@@ -1,6 +1,14 @@
 .spanError span{
-    color: #e22b2b;
+    color: #d24525;
     margin-left: 10px;
     font-weight: bold;
 
+}
+.captcha img{
+    height: 90px;
+}
+.inputElement{
+    background-color: #f8f5f5;
+    border: 1px solid #429a95;
+    /*color: #429a95;*/
 }

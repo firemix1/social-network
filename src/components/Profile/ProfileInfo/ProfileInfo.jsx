@@ -14,7 +14,7 @@ const ProfileInfo = (props) => {
             <span  className={styles.photoUser}>
                 <div className={styles.updatePhotoButton}> {props.owner && <input type="file" onChange={props.updatePhoto}/>} </div>
                 {(!props.profile.photos.large)
-                    ? <img src={userPhoto}/>
+                    ? <img src={userPhoto} alt={"User"}/>
                     : <img src={props.profile.photos.large} alt={"large"}/>}
 
             </span>

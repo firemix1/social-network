@@ -82,6 +82,7 @@ export const requestUsers = (requestPage, pageSize) => {
 }
 export const unfollowUser = (userId) => {
     return (dispatch) => {
+        dispatch(toggleFollowingProcessing(true, userId))
         usersApi.unfollow(userId)
             .then(response => {
                     if (response.data.resultCode === 0) {

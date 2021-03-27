@@ -4,6 +4,7 @@ import Message from "./Message/Message";
 import React from "react";
 import {Form} from "react-final-form";
 import {NewMessageWithValidate} from "../Common/FormsControl/FormsControl";
+import btnStyle from "../Common/modulesCSS/button.module.css";
 
 const Dialogs = (props) => {
 
@@ -40,7 +41,7 @@ const NewMessageForm = (props) => (
                     <NewMessageWithValidate />
                 </div>
                 <div>
-                    <button type="submit">Send</button>
+                    <button type="submit" className={btnStyle.button}>Send</button>
                 </div>
             </form>
         )}
