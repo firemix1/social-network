@@ -1,4 +1,4 @@
-import preloader from "../../../images/preloader4.svg";
+import preloader from "../../../images/preloader.svg";
 import React from "react";
 import styles from "./Preloader.module.css"
 

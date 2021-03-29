@@ -6,7 +6,7 @@ let initialState = {
     initialized: false
 }
 
-let appReducer = (state = initialState, action) => {
+let appReducer = (state = initialState, action:any) => {
     switch (action.type) {
         case INITIALIZE_COMPLETED:
             return {...state, initialized: true}
@@ -16,9 +16,7 @@ let appReducer = (state = initialState, action) => {
 }
 export const initializationCompleted = () => ({type: INITIALIZE_COMPLETED})
 
-export const initializeFull = () => dispatch => {
-    // let promise = dispatch(setAuthMe())
-    // promise.then(() => {dispatch(initializationCompleted())})
+export const initializeFull = () => (dispatch: any) => {
     let promise = dispatch(setAuthMe())
     Promise.all([promise]).then(() => {
         dispatch(initializationCompleted())

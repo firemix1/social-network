@@ -24,7 +24,6 @@ class App extends Component {
         if (!this.props.initialized) return <Preloader/>
         return (
             <div className="full-screen">
-
                 <div className="app-wrapper">
                     <HeaderContainer/>
                     <Navbar/>
@@ -38,7 +37,6 @@ class App extends Component {
                         <Route exact path="/" render={() => <Login/>}><Redirect from="/" to="/profile"/></Route>
                     </div>
                 </div>
-
             </div>
         )
     }

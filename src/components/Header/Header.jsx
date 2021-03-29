@@ -1,10 +1,11 @@
 import styles from "./Header.module.css"
 import {NavLink} from "react-router-dom";
 import btnStyle from "../Common/modulesCSS/button.module.css";
+import logo from "../../images/React-icon.png"
 
 const Header = (props) => {
     return <div className={styles.header}>
-        <img src="https://webstockreview.net/images/blood-streak-png-9.png" alt="header img"/>
+        <img src={logo} alt="header img"/>
         <div className={styles.LoginBar}>
             {props.auth.isAuth
                 ? <div className={styles.logout}><NavLink to={"/profile"}> {props.auth.login}
