@@ -7,10 +7,8 @@
 В качестве серверного API используется [https://social-network.samuraijs.com/api/1.0](https://social-network.samuraijs.com/api/1.0)
 
 **Посмотреть сам сайт вы можете, перейдя по ссылке [https://firemix1.github.io/social-network/](https://firemix1.github.io/social-network/)**    
-Для входа следует использовать следующие данные:
-логин:  forsocialnetworkemail@gmail.com
-=======
-логин:  free@samuraijs.com
+Для входа следует использовать следующие данные:    
+логин:  forsocialnetworkemail@gmail.com    
 пароль: free
 
 Если вы хотите запустить сайт локально, вам следует клонировать его в нужную директорию
